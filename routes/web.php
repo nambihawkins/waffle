@@ -20,6 +20,7 @@ Route::get('/support', ['as' => 'support', 'uses' => 'PagesController@support' ]
 Route::get('/privacy', ['as' => 'privacy', 'uses' => 'PagesController@privacy' ]);
 Route::get('/careers', ['as' => 'careers', 'uses' => 'PagesController@careers' ]);
 Route::get('/contact', ['as' => 'contact', 'uses' => 'PagesController@contact' ]);
+Route::get('/contact', ['as' => 'contact', 'uses' => 'MapController@index']);
 Route::get('/', ['as' => 'login', 'uses' => 'AuthController@login' ]);
 Route::post('/handleLogin', ['as' => 'handleLogin', 'uses' => 'AuthController@handleLogin' ]);
 Route::get('/home', ['middleware' => 'auth', 'as' => 'home', 'uses' => 'UsersController@home']);
