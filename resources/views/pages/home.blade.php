@@ -12,7 +12,7 @@
             margin: 0 auto;
         }
         .sidebar {
-            background-color: red;
+            
         }
         .posts {
             width: 50%;
