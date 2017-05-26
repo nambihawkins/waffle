@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstname', 'lastname', 'email', 'username', 'password'
     ];
 
     /**
@@ -25,5 +25,18 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+
+    public static $login_validation_rules = [
+      'email' => 'required|email|exists:users',
+      'password' => 'required'
+    ];
+
+    public static $create_validation_rules = [
+      'firstname' => 'required',
+      'lastname' => 'required',
+      'username' => 'required|unique:users',
+      'email' => 'required|email|unique:users',
+      'password' => 'required'
     ];
 }
